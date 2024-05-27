@@ -1,12 +1,17 @@
-
-using WebApplication1.Repositories;
-using WebApplication1.Service;
+using Microsoft.EntityFrameworkCore;
+using WebApplication1.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<UniverityDbContext>(opt =>
+    {
+        string connString = builder.Configuration.GetConnectionString("DbConnString");
+        opt.UseSqlServer(connString);
+    }
+);
 
 var app = builder.Build();
 
