@@ -1,6 +1,8 @@
-﻿namespace WebApplication1;
+﻿using Microsoft.AspNetCore.Mvc;
 
-public class Controller
+namespace WebApplication1;
+
+public class Controller : ControllerBase
 {
     
 }
