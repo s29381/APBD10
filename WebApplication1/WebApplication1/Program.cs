@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<UniverityDbContext>(opt =>
+builder.Services.AddDbContext<HospitalDbContext>(opt =>
     {
         string connString = builder.Configuration.GetConnectionString("DbConnString");
         opt.UseSqlServer(connString);
