@@ -1,10 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Entities;
+using WebApplication1.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllers();
+builder.Services.AddScoped<IService, Service>();
 
 builder.Services.AddDbContext<HospitalDbContext>(opt =>
     {
@@ -23,8 +26,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
-
 app.MapControllers();
+
+app.UseAuthorization();
 
 app.Run();

@@ -26,6 +26,6 @@ public class HospitalDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(DoctorEfConfiguration).Assembly);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(HospitalDbContext).Assembly);
     }
 }

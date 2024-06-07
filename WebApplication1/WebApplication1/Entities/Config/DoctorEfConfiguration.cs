@@ -7,7 +7,7 @@ public class DoctorEfConfiguration : IEntityTypeConfiguration<Doctor>
 {
     public void Configure(EntityTypeBuilder<Doctor> builder)
     {
-        builder.HasKey(e => e.IdDoctor).HasName("Group_pk");
+        builder.HasKey(e => e.IdDoctor).HasName("Doctor_pk");
         builder.Property(e => e.IdDoctor).UseIdentityColumn();
 
         builder.Property(e => e.FirstName).IsRequired().HasMaxLength(100);
@@ -16,13 +16,13 @@ public class DoctorEfConfiguration : IEntityTypeConfiguration<Doctor>
         
         builder.Property(e => e.Email).IsRequired().HasMaxLength(100);
 
-        builder.ToTable("Group");
+        builder.ToTable(nameof(Doctor));
 
-        Doctor[] groups =
+        Doctor[] doctors =
         {
             
         };
 
-        builder.HasData(groups);
+        builder.HasData(doctors);
     }
 }
