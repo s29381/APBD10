@@ -9,6 +9,9 @@ public class PrescriptionMedicamentEfConfiguration : IEntityTypeConfiguration<Pr
     {
         builder
             .HasKey(pm => new { pm.IdPrescription, pm.IdMedicament });
+        builder.Property(pm => new { pm.IdPrescription, pm.IdMedicament });
+
+        builder.Property(e => e.Details).HasMaxLength(100);
 
         builder
             .HasOne(pm => pm.Prescription)

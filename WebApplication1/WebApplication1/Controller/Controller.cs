@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApplication1.Entities;
 using WebApplication1.Entities.DTO;
 using WebApplication1.Service;
 
